@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n-title="meta.title">HexaDash Flasher</title>
+  <meta name="description" content="HexaDash-Firmware direkt im Browser auf einen ESP32-C6 flashen." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,8 88,29 88,71 50,92 12,71 12,29' fill='%236c5ce7'/%3E%3Crect x='34' y='34' width='32' height='32' rx='5' fill='%2300d1b2'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <script type="module" src="./assets/esp-web-tools/install-button.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg class="hex" viewBox="0 0 100 100" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#6c5ce7" />
+            <stop offset="1" stop-color="#00d1b2" />
+          </linearGradient>
+        </defs>
+        <polygon points="50,4 91,27 91,73 50,96 9,73 9,27" fill="none" stroke="url(#g)" stroke-width="7" stroke-linejoin="round" />
+        <rect x="34" y="34" width="32" height="32" rx="5" fill="url(#g)" />
+      </svg>
+      <span>HexaDash</span>
+    </div>
+    <nav class="lang-switch" aria-label="Sprache / Language">
+      <button type="button" data-lang="de">DE</button>
+      <button type="button" data-lang="en">EN</button>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1 data-i18n="hero.title">HexaDash Flash Tool</h1>
+      <p class="lead" data-i18n="hero.lead"></p>
+      <div class="chips">
+        <span class="chip" data-i18n="chip.chip"></span>
+        <span class="chip" data-i18n="chip.flash"></span>
+        <span class="chip" data-i18n="chip.browser"></span>
+        <span class="chip" data-i18n="chip.usb"></span>
+      </div>
+    </section>
+
+    <div id="banner-ok" class="banner ok" hidden>
+      <span class="ico">✅</span>
+      <span data-i18n="banner.ok"></span>
+    </div>
+    <div id="banner-warn" class="banner warn" hidden>
+      <span class="ico">⚠️</span>
+      <span data-i18n="banner.warn"></span>
+    </div>
+
+    <div class="install-card">
+      <h2 data-i18n="install.title">Firmware installieren</h2>
+      <p class="sub" data-i18n="install.sub"></p>
+      <esp-web-install-button manifest="./manifest.json">
+        <button class="btn-primary" slot="activate" data-i18n="install.button">HexaDash installieren</button>
+        <span slot="unsupported" class="slot-msg" data-i18n="install.unsupported"></span>
+        <span slot="not-allowed" class="slot-msg" data-i18n="install.notallowed"></span>
+      </esp-web-install-button>
+    </div>
+
+    <section>
+      <h2 class="section-title" data-i18n="steps.title">So geht's</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <div><h3 data-i18n="steps.1.t"></h3><p data-i18n="steps.1.d"></p></div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div><h3 data-i18n="steps.2.t"></h3><p data-i18n="steps.2.d"></p></div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <div><h3 data-i18n="steps.3.t"></h3><p data-i18n="steps.3.d"></p></div>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <div><h3 data-i18n="steps.4.t"></h3><p data-i18n="steps.4.d"></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title" data-i18n="trouble.title">Fehlerbehebung</h2>
+      <details>
+        <summary data-i18n="trouble.1.q"></summary>
+        <div class="body"><p data-i18n="trouble.1.a"></p></div>
+      </details>
+      <details>
+        <summary data-i18n="trouble.2.q"></summary>
+        <div class="body"><p data-i18n="trouble.2.a"></p></div>
+      </details>
+      <details>
+        <summary data-i18n="trouble.3.q"></summary>
+        <div class="body"><p data-i18n="trouble.3.a"></p></div>
+      </details>
+      <details>
+        <summary data-i18n="trouble.4.q"></summary>
+        <div class="body"><p data-i18n="trouble.4.a"></p></div>
+      </details>
+      <details>
+        <summary data-i18n="trouble.5.q"></summary>
+        <div class="body"><p data-i18n="trouble.5.a"></p></div>
+      </details>
+    </section>
+
+    <section>
+      <h2 class="section-title" data-i18n="faq.title">Häufige Fragen</h2>
+      <details>
+        <summary data-i18n="faq.1.q"></summary>
+        <div class="body"><p data-i18n="faq.1.a"></p></div>
+      </details>
+      <details>
+        <summary data-i18n="faq.2.q"></summary>
+        <div class="body"><p data-i18n="faq.2.a"></p></div>
+      </details>
+      <details>
+        <summary data-i18n="faq.3.q"></summary>
+        <div class="body"><p data-i18n="faq.3.a"></p></div>
+      </details>
+      <details>
+        <summary data-i18n="faq.4.q"></summary>
+        <div class="body"><p data-i18n="faq.4.a"></p></div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p class="wrap" data-i18n="footer.note"></p>
+  </footer>
+
+  <script src="./assets/i18n.js"></script>
+</body>
+</html>
